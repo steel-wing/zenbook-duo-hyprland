@@ -46,6 +46,5 @@ You should now be able to remove your keyboard, replace it and have brightness s
 
 ## Alternatives
 Here are some alternative script setups for use on other DEs:
-- https://github.com/ywzjackal/zenbook-duo-2025-linux
-- https://github.com/alesya-h/zenbook-duo-2024-ux8406ma-linux/
-- I know there's one more but it's hard to find
+- (Gnome) https://github.com/ywzjackal/zenbook-duo-2025-linux
+- (KDE) https://github.com/alesya-h/zenbook-duo-2024-ux8406ma-linux/
