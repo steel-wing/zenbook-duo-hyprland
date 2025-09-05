@@ -1,0 +1,2 @@
+ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="0b05", ATTRS{idProduct}=="1b2c", RUN+="/usr/local/bin/zenbook-scripts/keyboard-status-receiver.sh on"
+ACTION=="remove", SUBSYSTEM=="usb", ATTRS{idVendor}=="0b05", ATTRS{idProduct}=="1b2c", RUN+="/usr/local/bin/zenbook-scripts/keyboard-status-receiver.sh off"
