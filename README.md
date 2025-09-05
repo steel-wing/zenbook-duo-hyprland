@@ -1,5 +1,7 @@
 # Zenbook Duo - Hyprland
-These are the scripts I use on my Arch + Hyprland Asus Zenbook Duo (2024). I leave it to people smarter than I am to adapt them to their own usages. I also don't trust myself to make an install script, so everything is going to be manual here.
+These are the scripts I use on my Arch + Hyprland Asus Zenbook Duo (2024). I leave it to people smarter than I am to adapt them to their own usages.
+
+These scripts sync brightness across the screens, enable the bottom screen when the keyboard is removed, and disable it when it's replaced.
 
 Disclaimer: I am new to linux and these might not be optimal.
 
@@ -36,15 +38,13 @@ sudo udevadm control --reload-rules
 sudo udevadm trigger
 ```
 
-### All done
-You should now be able to remove your keyboard, replace it and have brightness sync across screens.
-
 ## Future Features:
 - Automatic screen rotation when both screens are active
-- Better touch screen support (idk w/ hyprland)
-- function keys?
+- Better touch screen support
+- function keys & keyboard bindings
+- an install/deinstall script, and better consolidation
 
 ## Alternatives
 Here are some alternative script setups for use on other DEs:
-- (Gnome) https://github.com/ywzjackal/zenbook-duo-2025-linux
-- (KDE) https://github.com/alesya-h/zenbook-duo-2024-ux8406ma-linux/
+- (KDE) https://github.com/ywzjackal/zenbook-duo-2025-linux
+- (GNOME) https://github.com/alesya-h/zenbook-duo-2024-ux8406ma-linux/
