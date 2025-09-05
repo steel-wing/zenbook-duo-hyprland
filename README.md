@@ -1,5 +1,5 @@
 # Zenbook Duo - Hyprland
-These are the scripts I use on my Arch + Hyprland Asus Zenbook Duo (2024). These scripts require `hyprland`, `hyprctl`, `inotifywait`, and `lsusb` be installed.
+These are the scripts I use on my Arch + Hyprland Asus Zenbook Duo (2024). These scripts require `hyprland`, `hyprctl`, `inotifywait`, and `lsusb`.
 
 ## Installation
 ### Hyprland Config
