@@ -3,9 +3,6 @@
 
 STATUSFILE="/tmp/zenbook/zenbook-keyboard-status"
 
-# Ensure the directory exists
-mkdir -p "$(dirname "$STATUSFILE")"
-
 # read current state
 if [ -f "$STATUSFILE" ]; then
     STATE=$(cat "$STATUSFILE")
@@ -22,5 +19,5 @@ else
     echo "on" > "$STATUSFILE"
 
     # I figured this would be okay: check to see if the top screen should be off too, if the lid is off
-    "usr/local/bin/zenbook-scripts/screen-wake-response.sh"
+    /usr/local/bin/zenbook-scripts/screen-wake-response.sh
 fi

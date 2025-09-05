@@ -7,9 +7,6 @@ TARGET_ID=0b05:1b2c 	# lsusb id of zenbook keyboard
 LID_PATH="/proc/acpi/button/lid/LID/state"
 STATUSFILE="/tmp/zenbook/zenbook-keyboard-status"
 
-# Ensure the directory exists
-mkdir -p "$(dirname "$STATUSFILE")"
-
 # read current state of the keyboard
 if lsusb | grep -q "$TARGET_ID"; then
     hyprctl keyword monitor "eDP-2, disable"

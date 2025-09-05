@@ -5,7 +5,7 @@
 
 STATUSFILE="/tmp/zenbook/zenbook-keyboard-status"
 
-# Ensure the directory exists
+# ensure the directory exists
 mkdir -p "$(dirname "$STATUSFILE")"
 
 case "$1" in
