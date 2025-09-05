@@ -42,6 +42,8 @@ sudo udevadm trigger
 - Automatic screen rotation when both screens are active
 - Better touch screen support
 - function keys & keyboard bindings
+- keyboard backlight
+- the engimatic bottom screen disable button
 - an install/deinstall script, and better consolidation
 
 ## Alternatives
