@@ -7,7 +7,7 @@ Disclaimer: I am new to linux and these might not be optimal.
 
 ## Installation
 ### Hyprland Config
-After downloading (and assuming Hyprland is installed) move zenbook.conf into your .config/hypr/ folder, and add this line to your hyprland.conf file: 
+After downloading, move zenbook.conf into ~/.config/hypr/, and add this line to your hyprland.conf file: 
 ```
 source = ~/.config/hypr/zenbook.conf
 ```
@@ -29,14 +29,15 @@ then just replace mine (0b05:1b2c) with your own.
 
 
 ### Udev Rule
-Then, you'll need to add 99-asus-bottom-screen.rules to /etc/udev/rules.d
-
-### Reboot
-Finally, reboot. That should ensure that hyprland (via zenbook.conf) loads our keyboard-status-watcher.sh script and our udev rule is run. If it isn't, run:
+Place 99-asus-bottom-screen.rules to /etc/udev/rules.d and run
 ```
 sudo udevadm control --reload-rules
-sudo udevadm trigger
 ```
+to ensure that the rule is loaded.
+
+### Reboot
+Finally, reboot. That should ensure that hyprland (via zenbook.conf) loads our keyboard-status-watcher.sh and our udev rule is run.
+
 
 ## Future Features:
 - Automatic screen rotation when both screens are active
