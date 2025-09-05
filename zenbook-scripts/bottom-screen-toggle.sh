@@ -18,6 +18,6 @@ else
     hyprctl keyword monitor "eDP-2, disable"
     echo "on" > "$STATUSFILE"
 
-    # I figured this would be okay: check to see if the top screen should be off too, if the lid is off
+    # check to see if the top screen should be off too, if the lid is close
     /usr/local/bin/zenbook-scripts/screen-wake-response.sh
 fi
