@@ -1,5 +1,8 @@
 # Zenbook Duo - Hyprland
-These are the scripts I use on my Arch + Hyprland Asus Zenbook Duo (2024). These scripts require `hyprland`, `hyprctl`, `inotifywait`, and `lsusb`.
+These are the scripts I use on my Arch + Hyprland Asus Zenbook Duo (2024). These scripts are built on `hyprland` and `hyprctl`, which should already be installed, as well as `inotify-tools` (for `inotifywait`), and `usbutils` (for `lsusb`). To download all these, run:
+```
+sudo pacman -S hyprland hyprctl inotify-tools usbutils
+```
 
 ## Installation
 ### Hyprland Config
@@ -8,21 +11,24 @@ After downloading, move `zenbook.conf` into `~/.config/hypr/`, and add this line
 source = ~/.config/hypr/zenbook.conf
 ```
 ### Scripts
-Copy the `zenbook-scripts` folder to `/usr/local/bin/` and run:
-```
-sudo chmod -R +x /usr/local/bin/zenbook-scripts
-```
-
-Note, you will need to change the value for **TARGET_ID** in `zenbook-scripts/screen-wake-response.sh` to the ID of your own keyboard, which can be found by running:
+You must modify the value for **TARGET_ID** in `zenbook-scripts/screen-wake-response.sh` to the ID of your own keyboard, which can be found by running:
 ```
 lsusb
 ```
 while the keyboard is physically connected and finding the ID corresponding to `ASUSTek Computer, Inc. ASUS Zenbook Duo Keyboard` and replacing mine (`0b05:1b2c`) with your own.
 
+Then copy the `zenbook-scripts` folder to `/usr/local/bin/` and allow its contents to be run:
+```
+sudo mkdir /usr/local/bin/zenbook-scripts
+sudo mv ~/Downloads/zenbook-duo-hyprland-main/zenbook-scripts/* /usr/local/bin/zenbook-scripts
+sudo chmod -R +x /usr/local/bin/zenbook-scripts
+```
+
 
 ### Udev Rule
-Place `99-asus-bottom-screen.rules` in `/etc/udev/rules.d` and run:
+Place `99-asus-bottom-screen.rules` in `/etc/udev/rules.d` and reload the rules:
 ```
+sudo mv ~/Downloads/zenbook-duo-hyprland-main/99-asus-bottom-screen.rules /etc/udev/rules.d
 sudo udevadm control --reload-rules
 ```
 to ensure that the rule is loaded.
