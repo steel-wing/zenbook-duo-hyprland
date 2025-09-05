@@ -16,7 +16,7 @@ else
     echo "off" > "$STATUSFILE" 
 fi
 
-# this is a niche case, but if you're using an external monitor with the laptop closed,
+# if you're using an external monitor with the laptop closed,
 # this should ensure the top monitor doesn't stay on.
 
 # read the state of the lid
