@@ -44,11 +44,12 @@ On my machine, currently, the maximum usage of these scripts (in the form of ino
 
 ## Features:
 - [X] bottom screen automatic keyboard response
+- [X] persistant screen state memory
 - [X] bottom screen toggle (SUPER + O)
 - [X] brightness sync
 - [X] automatic screen rotation
 - [ ] battery charge limiter
-- [ ] touchscreen mapping
+- [X] touchscreen mapping
 - [ ] on-screen keyboard
 - [ ] alternative function key bindings (volume etc.)
 - [ ] keyboard backlight
