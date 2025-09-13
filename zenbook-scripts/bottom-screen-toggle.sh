@@ -7,17 +7,14 @@ STATUSFILE="/tmp/zenbook/zenbook-keyboard-status"
 if [ -f "$STATUSFILE" ]; then
     STATE=$(cat "$STATUSFILE")
 else
-    STATE="of"
+    STATE="0"
 fi
 
 # toggle state
-if [ "$STATE" == "on" ]; then
+if [ "$STATE" == "1" ]; then
     hyprctl keyword monitor "eDP-2, preferred, 0x1200, 1.0"
-    echo "of" > "$STATUSFILE"
+    echo "0" > "$STATUSFILE"
 else
     hyprctl keyword monitor "eDP-2, disable"
-    echo "on" > "$STATUSFILE"
-
-    # check to see if the top screen should be off too, if the lid is close
-    /usr/local/bin/zenbook-scripts/screen-wake-response.sh
+    echo "1" > "$STATUSFILE"
 fi

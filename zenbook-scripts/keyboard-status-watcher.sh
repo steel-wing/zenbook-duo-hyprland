@@ -5,6 +5,7 @@
 
 STATUSFILE="/tmp/zenbook/zenbook-keyboard-status"
 
+
 # build the directory
 mkdir -p "$(dirname "$STATUSFILE")"
 touch "$STATUSFILE"
@@ -17,21 +18,27 @@ done
 # export the var so hyprctl can use it
 export HYPRLAND_INSTANCE_SIGNATURE
 
-# execute the wake response script first to get things right
-/usr/local/bin/zenbook-scripts/screen-wake-response.sh
+# record previous status
+LAST_STATUS=""
 
 # watch for changes
-inotifywait -m -e create,close_write "$STATUSFILE" | while read -r filename event; do
-    # wait in case this is a creation and not just an update
-    sleep 0.01
+inotifywait -m -e modify "$STATUSFILE" | while read -r _; do
+    read -r STATUS < "$STATUSFILE"
 
-    STATUS=$(cat "$STATUSFILE" 2>/dev/null)
+    # skip if status is empty or unchanged
+    [[ -z "$STATUS" || "$STATUS" == "$LAST_STATUS" ]] && continue
+
     case "$STATUS" in
-        on)
+        1)
+            /usr/bin/hyprctl keyword monitor "eDP-1, preferred, 0x0, 1, transform, 0"
             /usr/bin/hyprctl keyword monitor "eDP-2, disable"
             ;;
-        of)
+        0)
             /usr/bin/hyprctl keyword monitor "eDP-2, preferred, 0x1200, 1.0"
+            /usr/local/bin/zenbook-scripts/screen-rotation.sh &
             ;;
     esac
+
+    LAST_STATUS="$STATUS"
+    
 done
