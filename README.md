@@ -46,13 +46,13 @@ On my machine, currently, the maximum usage of these scripts (in the form of ino
 - [X] bottom screen automatic keyboard response
 - [X] bottom screen toggle (SUPER + O)
 - [X] brightness sync
-- [X] automatic screen rotation when both screens are active
+- [X] automatic screen rotation
 - [ ] battery charge limiter
 - [ ] touchscreen mapping
 - [ ] on-screen keyboard
-- [ ] stylus support
 - [ ] alternative function key bindings (volume etc.)
 - [ ] keyboard backlight
+- [ ] fan control
 - [ ] the engimatic bottom screen disable button
 - [ ] an install/uninstall script, and better consolidation
 
@@ -61,6 +61,9 @@ On my machine, currently, the maximum usage of these scripts (in the form of ino
 - **GNOME**: https://github.com/alesya-h/zenbook-duo-2024-ux8406ma-linux/
 - **Ubuntu**: https://github.com/Fmstrat/zenbook-duo-linux
     - Ubuntu based; this copies and consolidates Alesya's GNOME approach
+- **GNOME & Hyprland**: https://github.com/evilsquid888/zenbook-duo-2024-ux8406ca-linux
+      - This one has worked on adapting Alesya's to Hyprland, and shows promise!
 - **Nix & Misc.**: https://docs.google.com/spreadsheets/d/1FyQ1RQ8zcTqokwqjNKyVzNravB_R-KRfJmR6frjeE3c/edit?pli=1&gid=0#gid=0
 - **Battery Health**: https://github.com/sakibulalikhan/asus-battery-health
+- **Incredible Kernal Work**: https://github.com/NeroReflex/asusctl/issues/25
   
