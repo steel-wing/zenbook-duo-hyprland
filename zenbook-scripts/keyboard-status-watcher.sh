@@ -18,7 +18,7 @@ done
 # export the var so hyprctl can use it
 export HYPRLAND_INSTANCE_SIGNATURE
 
-# record previous status
+# record previous status (this is necessary to avoid repeat calls)
 LAST_STATUS=""
 
 # watch for changes

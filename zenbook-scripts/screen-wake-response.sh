@@ -16,6 +16,8 @@ if lsusb | grep -q "$TARGET_ID"; then
   echo "1" >"$STATUSFILE"
 else
   hyprctl keyword monitor "eDP-2, preferred, 0x1200, 1.0"
+  /usr/local/bin/zenbook-scripts/screen-rotation.sh &
+
   echo "0" >"$STATUSFILE"
 fi
 
