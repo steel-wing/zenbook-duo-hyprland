@@ -14,7 +14,7 @@ After downloading, move `zenbook.conf` into `~/.config/hypr/`, and add this line
 source = ~/.config/hypr/zenbook.conf
 ```
 ### Scripts
-You must modify the value for **TARGET_ID** in `zenbook-scripts/screen-wake-response.sh` to the ID of your own keyboard, which can be found by running `lsusb` in the terminal
+You must modify the value for **TARGET_ID** in `zenbook-scripts/screen-response.sh` to the ID of your own keyboard, which can be found by running `lsusb` in the terminal
 while the keyboard is physically connected and then finding the ID corresponding to `ASUSTek Computer, Inc. ASUS Zenbook Duo Keyboard`. Then replace the ID in the code (`0b05:1b2c`) with your own.
 
 Copy the `zenbook-scripts` folder to `/usr/local/bin/` and allow its contents to be run:
@@ -26,7 +26,7 @@ sudo chmod -R +x /usr/local/bin/zenbook-scripts
 _This is assuming that the files from this repository made it into your Downloads folder in a folder named `zenbook-duo-hyprland-main`_
 
 ### Udev Rule
-Edit `99-asus-bottom-screen.rules` in the same way as you did `screen-wake-response.sh`, replacing the first four characters of the ID in `ATTRS{idVendor}=="0b05"` and the second four in `ATTRS{idProduct}=="1b2c"`.
+Edit `99-asus-bottom-screen.rules` in the same way as you did `screen-response.sh`, replacing the first four characters of the ID in `ATTRS{idVendor}=="0b05"` and the second four in `ATTRS{idProduct}=="1b2c"`.
 Be sure to do this for both lines of code (one for removing the keyboard, one for replacing).
 
 Place `99-asus-bottom-screen.rules` in `/etc/udev/rules.d` and reload the rules:
@@ -36,7 +36,7 @@ sudo udevadm control --reload-rules
 ```
 
 ### Reboot
-Finally, reboot. That should ensure that hyprland (via zenbook.conf) loads our `keyboard-status-watcher.sh` and our udev rule is run.
+Finally, reboot. That should ensure that hyprland (via zenbook.conf) loads our `keyboard-watcher.sh` and our udev rule is run.
 
 ## Performance
 On my machine, currently, the maximum usage of these scripts (in the form of inotifywait and sensor-monitor calls) is around 23Mb (with both screens on). It normally sits around 15Mb (when the keyboard is attached). 
@@ -48,7 +48,6 @@ On my machine, currently, the maximum usage of these scripts (in the form of ino
 - [X] bottom screen toggle (SUPER + O)
 - [X] brightness sync
 - [X] automatic screen rotation
-- [ ] battery charge limiter
 - [X] touchscreen mapping
 - [ ] on-screen keyboard
 - [ ] alternative function key bindings (volume etc.)
