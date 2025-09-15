@@ -26,7 +26,7 @@ get_brightness_percentage() {
     echo $((100 * current_brightness / max_brightness))
 }
 
-# Inotify wait on the intel_backlight brightness file
+# inotifywait on the intel_backlight brightness file
 inotifywait -m -e modify "$intel_brightness_file" |
 while read -r path action file; do
     # get current brightness of intel_backlight (in percentage)

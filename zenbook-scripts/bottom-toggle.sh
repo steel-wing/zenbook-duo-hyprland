@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# this script is called by a hyprland binding, SUPER O in my case
+# it just toggles the bottom monitor
+
+STATUSFILE="/tmp/zenbook/keyboard-status"
+
+# if second monitor is live, disable it
+if hyprctl monitors | grep -q 'eDP-2'; then
+    hyprctl keyword monitor "eDP-2, disable"
+else
+    # if keyboard isn't attached, ensure that the screens get updated
+    if [[ "$(cat "$STATUSFILE" 2>/dev/null)" == "0" ]]; then
+        /usr/local/bin/zenbook-scripts/update-screens.sh &
+    fi
+fi
