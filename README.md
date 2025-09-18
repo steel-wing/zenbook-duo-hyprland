@@ -27,7 +27,7 @@ sudo cp ~/Downloads/zenbook-scripts/* /usr/local/bin/zenbook-scripts
 sudo chmod -R +x /usr/local/bin/zenbook-scripts
 ```
 
-### Udev Rule
+### udev Rule
 Edit `99-asus-bottom-screen.rules` in the same way as you did `screen-response.sh`, replacing the first four characters of the ID in `ATTRS{idVendor}=="0b05"` and the second four in `ATTRS{idProduct}=="1b2c"`.
 Be sure to do this for both lines of code (one for removing the keyboard, one for replacing).
 
