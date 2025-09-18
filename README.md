@@ -9,12 +9,15 @@ sudo pacman -S inotify-tools usbutils iio-sensor-proxy
 ```
 
 ### Hyprland Config
-After downloading, move `zenbook.conf` into `~/.config/hypr/`, and add this line to your `hyprland.conf` file: 
+After downloading, move `zenbook.conf` into `~/.config/hypr/`, 
 ```
 cp ~/Downloads/zenbook.conf ~/.config/hypr
+```
+and add this line to your `hyprland.conf` file: 
+```
 source = ~/.config/hypr/zenbook.conf
 ```
-_This is assuming that the files from this repository made it into your Downloads folder as they are listed in this directory_
+_This is assuming that the files from this repository made it into your Downloads folder as they are listed in this directory._
 
 ### Scripts
 You must modify the value for **TARGET_ID** in `zenbook-scripts/screen-response.sh` to the ID of your own keyboard, which can be found by running `lsusb` in the terminal
