@@ -2,7 +2,7 @@
 
 # this script is in charge of keeping track of the orientation of the laptop, if 
 
-STATUSFILE="/tmp/zenbook/keyboard-status"
+KEYBOARDFILE="/tmp/zenbook/keyboard-status"
 ORIENTFILE="/tmp/zenbook/orientation-status"
 
 monitor-sensor | while read -r line; do
@@ -37,7 +37,7 @@ monitor-sensor | while read -r line; do
     fi
 
     # end this script when keyboard is reattached
-    if [[ "$(cat "$STATUSFILE" 2>/dev/null)" == "1" ]]; then
+    if [[ "$(cat "$KEYBOARDFILE" 2>/dev/null)" == "1" ]]; then
         echo "0" > "$ORIENTFILE"
         pkill -f monitor-sensor
         break

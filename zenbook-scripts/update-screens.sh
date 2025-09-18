@@ -3,19 +3,19 @@
 # this script is in charge of lighting up, turning off, or rotating screens based on context.
 
 ## Load in Contextual Data
-
-STATUSFILE="/tmp/zenbook/keyboard-status"
+KEYBOARDFILE="/tmp/zenbook/keyboard-status"
 ORIENTFILE="/tmp/zenbook/orientation-status"
 LIDFILE="/proc/acpi/button/lid/LID/state"
 
-ORIENT=""
+ORIENT="0"
 LID_STATE=""
 
 # read in file contents
-read -r STATUS < "$STATUSFILE"
+read -r STATUS < "$KEYBOARDFILE"
 read -r ORIENTATION < "$ORIENTFILE"
 if [ -f "$LIDFILE" ]; then
     LID_STATE=$(grep -i 'state' "$LIDFILE" | awk '{print $2}')
+    echo "$LID_STATE"
 fi
 
 ## Laptop Lid Handling
@@ -24,6 +24,13 @@ if [ "$LID_STATE" == "closed" ]; then
     sleep 0.5 # avoiding more silliness, this time with waybar
     hyprctl keyword monitor "eDP-1, disable"
     hyprctl keyword monitor "eDP-2, disable"
+
+    # tricky solution to the "orientation = bottom-up" bug on closing the lid 
+    if [[ "$ORIENTATION" == "2" ]]; then
+        echo "0" > "$ORIENTFILE"
+    fi
+
+    exit
 fi
 
 ## Keyboard & Orientation Handling
@@ -64,5 +71,5 @@ case "$STATUS" in
 esac
 
 # update orientation of touch & stylus input
-# this works for all but screen mirroring mode, where only the bottom will be accurate
+# this works for all but screen mirroring mode, where only the bottom touchscreen will be accurate
 hyprctl keyword input:touchdevice:transform "$ORIENT"

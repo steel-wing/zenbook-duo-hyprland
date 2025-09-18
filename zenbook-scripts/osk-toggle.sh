@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # this script toggles the visibility of wvkbd
-# credit to a deleted user on reddit from 2 years ago for this one
+# credit to a deleted user on reddit from 2023 for this one
 
 # Save the current IFS
 OLD_IFS=$IFS
