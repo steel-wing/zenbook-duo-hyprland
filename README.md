@@ -11,8 +11,11 @@ sudo pacman -S inotify-tools usbutils iio-sensor-proxy
 ### Hyprland Config
 After downloading, move `zenbook.conf` into `~/.config/hypr/`, and add this line to your `hyprland.conf` file: 
 ```
+cp ~/Downloads/zenbook.conf ~/.config/hypr
 source = ~/.config/hypr/zenbook.conf
 ```
+_This is assuming that the files from this repository made it into your Downloads folder as they are listed in this directory_
+
 ### Scripts
 You must modify the value for **TARGET_ID** in `zenbook-scripts/screen-response.sh` to the ID of your own keyboard, which can be found by running `lsusb` in the terminal
 while the keyboard is physically connected and then finding the ID corresponding to `ASUSTek Computer, Inc. ASUS Zenbook Duo Keyboard`. Then replace the ID in the code (`0b05:1b2c`) with your own.
@@ -20,10 +23,9 @@ while the keyboard is physically connected and then finding the ID corresponding
 Copy the `zenbook-scripts` folder to `/usr/local/bin/` and allow its contents to be run:
 ```
 sudo mkdir /usr/local/bin/zenbook-scripts
-sudo mv ~/Downloads/zenbook-duo-hyprland-main/zenbook-scripts/* /usr/local/bin/zenbook-scripts
+sudo cp ~/Downloads/zenbook-scripts/* /usr/local/bin/zenbook-scripts
 sudo chmod -R +x /usr/local/bin/zenbook-scripts
 ```
-_This is assuming that the files from this repository made it into your Downloads folder in a folder named `zenbook-duo-hyprland-main`_
 
 ### Udev Rule
 Edit `99-asus-bottom-screen.rules` in the same way as you did `screen-response.sh`, replacing the first four characters of the ID in `ATTRS{idVendor}=="0b05"` and the second four in `ATTRS{idProduct}=="1b2c"`.
@@ -31,7 +33,7 @@ Be sure to do this for both lines of code (one for removing the keyboard, one fo
 
 Place `99-asus-bottom-screen.rules` in `/etc/udev/rules.d` and reload the rules:
 ```
-sudo mv ~/Downloads/zenbook-duo-hyprland-main/99-asus-bottom-screen.rules /etc/udev/rules.d
+sudo cp ~/Downloads/99-asus-bottom-screen.rules /etc/udev/rules.d
 sudo udevadm control --reload-rules
 ```
 
