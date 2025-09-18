@@ -50,7 +50,7 @@ On my machine, currently, the maximum usage of these scripts (in the form of ino
 - [X] automatic screen rotation
 - [X] touchscreen mapping
 - [ ] on-screen keyboard
-- [ ] alternative function key bindings (volume etc.)
+- [X] alternative function key bindings (volume etc.)
 - [ ] keyboard backlight
 - [ ] fan control
 - [ ] the engimatic bottom screen disable button
@@ -66,4 +66,5 @@ On my machine, currently, the maximum usage of these scripts (in the form of ino
 - **Nix & Misc.**: https://docs.google.com/spreadsheets/d/1FyQ1RQ8zcTqokwqjNKyVzNravB_R-KRfJmR6frjeE3c/edit?pli=1&gid=0#gid=0
 - **Battery Health**: https://github.com/sakibulalikhan/asus-battery-health
 - **Incredible Kernal Work**: https://github.com/NeroReflex/asusctl/issues/25
+- **Keyboard Kernal Fix?**: https://gist.github.com/mfenniak/f313f9a94fbcfa8fb52f978f29393ab1
   
