@@ -52,6 +52,9 @@ Finally, reboot. That should ensure that hyprland (via zenbook.conf) loads our `
 On my machine, currently, the maximum usage of these scripts (in the form of inotifywait and sensor-monitor calls) is around 23MB (with both screens on). It normally sits around 15Mb (when the keyboard is attached). 
 
 ## Additional Repos
+### Keyboard Backlight
+Among other things, [this repo](https://github.com/alesya-h/zenbook-duo-2024-ux8406ma-linux/) contains a script called bk.py, which sends usb data over to the keyboard and tells it to light up. The script requires `python3` and `pyusb` to be installed.
+
 ### On-Screen Keyboard
 I use [wvkbd](https://github.com/jjsullivan5196/wvkbd) as my OSK. You're free to alter the keyboard in `osk-toggle.sh` to your own selection. To install `wvkbd-deskintl`, you'll have to download the repository and build it yourself. The repo has instructions on how to do this.
 
@@ -76,18 +79,20 @@ There was an issue with the linux kernel for some time which made it so that rem
 - [X] hyprland touchscreen mappings
 - [X] alternative function key bindings (volume etc.)
 - [X] on-screen keyboard (via [wvkbd](https://github.com/jjsullivan5196/wvkbd), SUPER + A)
-- [ ] keyboard backlight
 - [ ] touchpad palm rejection
 - [ ] fan control
 - [ ] an install/uninstall script, and better consolidation
+
+## 
+
 
 ## Resources & Alternatives
 - **GNOME**: https://github.com/alesya-h/zenbook-duo-2024-ux8406ma-linux/
     - Alesya's approach is the most developed I've found.
 - **GNOME**: https://github.com/Fmstrat/zenbook-duo-linux
-    - This just copies and consolidates Alesya's GNOME approach
+    - This is just a consolidated, easily installable version of Alesya's GNOME approach
 - **GNOME & Hyprland**: https://github.com/evilsquid888/zenbook-duo-2024-ux8406ca-linux
-    - This one has worked on adapting Alesya's approach to Hyprland, and shows promise!
+    - This one has worked on adapting Alesya's approach to Hyprland, and may work just as well as (if not better than) mine.
 - **KDE**: https://github.com/ywzjackal/zenbook-duo-2025-linux
 - **Nix & Misc.**: https://docs.google.com/spreadsheets/d/1FyQ1RQ8zcTqokwqjNKyVzNravB_R-KRfJmR6frjeE3c/edit?pli=1&gid=0#gid=0
 - **Incredible Kernal Work**: https://github.com/NeroReflex/asusctl/issues/25
