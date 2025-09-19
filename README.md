@@ -87,7 +87,7 @@ There was an issue with the linux kernel for some time which made it so that rem
 - **GNOME**: https://github.com/Fmstrat/zenbook-duo-linux
     - This just copies and consolidates Alesya's GNOME approach
 - **GNOME & Hyprland**: https://github.com/evilsquid888/zenbook-duo-2024-ux8406ca-linux
-      - This one has worked on adapting Alesya's approach to Hyprland, and shows promise!
+    - This one has worked on adapting Alesya's approach to Hyprland, and shows promise!
 - **KDE**: https://github.com/ywzjackal/zenbook-duo-2025-linux
 - **Nix & Misc.**: https://docs.google.com/spreadsheets/d/1FyQ1RQ8zcTqokwqjNKyVzNravB_R-KRfJmR6frjeE3c/edit?pli=1&gid=0#gid=0
 - **Incredible Kernal Work**: https://github.com/NeroReflex/asusctl/issues/25
