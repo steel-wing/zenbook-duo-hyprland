@@ -75,7 +75,7 @@ There was an issue with the linux kernel for some time which made it so that rem
 - [x] share mode (flip upside down while keyboard removed)
 - [X] hyprland touchscreen mappings
 - [X] alternative function key bindings (volume etc.)
-- [X] on-screen keyboard (via [wvkbd](https://github.com/jjsullivan5196/wvkbd))
+- [X] on-screen keyboard (via [wvkbd](https://github.com/jjsullivan5196/wvkbd), SUPER + A)
 - [ ] keyboard backlight
 - [ ] touchpad palm rejection
 - [ ] fan control
