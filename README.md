@@ -80,13 +80,15 @@ There was an issue with the linux kernel for some time which made it so that rem
 - [ ] an install/uninstall script, and better consolidation
 
 ## Resources & Alternatives
-- **KDE**: https://github.com/ywzjackal/zenbook-duo-2025-linux
 - **GNOME**: https://github.com/alesya-h/zenbook-duo-2024-ux8406ma-linux/
-- **Ubuntu**: https://github.com/Fmstrat/zenbook-duo-linux
-    - Ubuntu based; this copies and consolidates Alesya's GNOME approach
+    - Alesya's approach is the most developed I've found.
+- **GNOME**: https://github.com/Fmstrat/zenbook-duo-linux
+    - This just copies and consolidates Alesya's GNOME approach
 - **GNOME & Hyprland**: https://github.com/evilsquid888/zenbook-duo-2024-ux8406ca-linux
-      - This one has worked on adapting Alesya's to Hyprland, and shows promise!
+      - This one has worked on adapting Alesya's approach to Hyprland, and shows promise!
+- **KDE**: https://github.com/ywzjackal/zenbook-duo-2025-linux
 - **Nix & Misc.**: https://docs.google.com/spreadsheets/d/1FyQ1RQ8zcTqokwqjNKyVzNravB_R-KRfJmR6frjeE3c/edit?pli=1&gid=0#gid=0
 - **Incredible Kernal Work**: https://github.com/NeroReflex/asusctl/issues/25
-- **Keyboard Kernal Fix?**: https://gist.github.com/mfenniak/f313f9a94fbcfa8fb52f978f29393ab1
+- **Keyboard Kernal Fix(?)**: https://gist.github.com/mfenniak/f313f9a94fbcfa8fb52f978f29393ab1
+- **Fan Control(?)**: https://github.com/dominiksalvet/asus-fan-control/
   
