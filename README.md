@@ -72,8 +72,10 @@ There was an issue with the linux kernel for some time which made it so that rem
 - [X] bottom screen toggle (SUPER + O)
 - [X] brightness sync between screens
 - [X] automatic screen rotation
-- [X] touchscreen mappings
+- [x] share mode (flip upside down while keyboard removed)
+- [X] hyprland touchscreen mappings
 - [X] alternative function key bindings (volume etc.)
+- [X] on-screen keyboard (via [wvkbd](https://github.com/jjsullivan5196/wvkbd))
 - [ ] keyboard backlight
 - [ ] touchpad palm rejection
 - [ ] fan control
