@@ -12,7 +12,7 @@ sleep 0.5
 ### Load Keyboard Status ###
 
 if lsusb | grep -q "$TARGET_ID"; then       # we're doing this instead of the udev so that if the keyboard changes states while we weren't looking,
-    echo "1" >"$KEYBOARDFILE"                 # this will still ensure everything gets connected correctly
+    echo "1" >"$KEYBOARDFILE"               # this will still ensure everything gets connected correctly
 else
     echo "0" >"$KEYBOARDFILE"
 fi
