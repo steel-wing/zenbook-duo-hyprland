@@ -53,7 +53,7 @@ On my machine, currently, the maximum usage of these scripts (in the form of ino
 
 ## Additional Repos
 ### Keyboard Backlight
-Among other things, [this repo](https://github.com/alesya-h/zenbook-duo-2024-ux8406ma-linux/) contains a script called bk.py, which sends usb data over to the keyboard and tells it to light up. The script requires `python3` and `pyusb` to be installed.
+Among other things, [this repo](https://github.com/alesya-h/zenbook-duo-2024-ux8406ma-linux/) contains a script called bk.py, which sends usb data over to the keyboard and tells it to light up. The script requires `python3` and `pyusb` to be installed. It only works while the keyboard is connected, but it does work.
 
 ### On-Screen Keyboard
 I use [wvkbd](https://github.com/jjsullivan5196/wvkbd) as my OSK. You're free to alter the keyboard in `osk-toggle.sh` to your own selection. To install `wvkbd-deskintl`, you'll have to download the repository and build it yourself. The repo has instructions on how to do this.
@@ -64,9 +64,9 @@ I use [asus-battery-health](https://github.com/sakibulalikhan/asus-battery-healt
 ### Touchscreen Gestures
 Hyprland supports plugins, and the [hyprgrass](https://github.com/horriblename/hyprgrass) plugin lets you perform gestures to run commands. I use it to bring up the keyboard, move between workspaces, and alter volume, brightness, etc.
 
+
 ## Warning
 There was an issue with the linux kernel for some time which made it so that removing the keyboard disabled the Wi-Fi adapter. This was patched in 6.11+, but seems to have broken again in 6.16.7.arch1-1.
-
 
 
 ## Features:
@@ -77,13 +77,12 @@ There was an issue with the linux kernel for some time which made it so that rem
 - [X] automatic screen rotation
 - [x] share mode (flip upside down while keyboard removed)
 - [X] hyprland touchscreen mappings
-- [X] alternative function key bindings (volume etc.)
+- [X] alternative function key bindings (bound to function keys, check zenbook.conf for details)
+- [X] keyboard backlight (via [bk.py](https://github.com/alesya-h/zenbook-duo-2024-ux8406ma-linux/), F4)
 - [X] on-screen keyboard (via [wvkbd](https://github.com/jjsullivan5196/wvkbd), SUPER + A)
 - [ ] touchpad palm rejection
 - [ ] fan control
 - [ ] an install/uninstall script, and better consolidation
-
-## 
 
 
 ## Resources & Alternatives
