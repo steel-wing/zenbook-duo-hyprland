@@ -51,15 +51,15 @@ Finally, reboot. That should ensure that hyprland (via zenbook.conf) loads our `
 ## Performance
 On my machine, currently, the maximum usage of these scripts (in the form of inotifywait and sensor-monitor calls) is around 23MB (with both screens on). It normally sits around 15Mb (when the keyboard is attached). 
 
-## Additional Repos
+## Other Code Being Used
 ### Keyboard Backlight
-Among other things, [this repo](https://github.com/alesya-h/zenbook-duo-2024-ux8406ma-linux/) contains a script called bk.py, which sends usb data over to the keyboard and tells it to light up. The script requires `python3` and `pyusb` to be installed. It only works while the keyboard is connected, but it does work.
+Among other things, [this repo](https://github.com/alesya-h/zenbook-duo-2024-ux8406ma-linux/) contains a script called bk.py, which sends usb data over to the keyboard and tells it to light up. The script requires `python3` and `pyusb` to be installed. It only works while the keyboard is connected. I have `backlight-increment.sh` keeping track of the state of the keyboard, and `zenbook.conf` makes sure to turn it off and on when you close/open the lid.
 
 ### On-Screen Keyboard
-I use [wvkbd](https://github.com/jjsullivan5196/wvkbd) as my OSK. You're free to alter the keyboard in `osk-toggle.sh` to your own selection. To install `wvkbd-deskintl`, you'll have to download the repository and build it yourself. The repo has instructions on how to do this.
+I use [wvkbd](https://github.com/jjsullivan5196/wvkbd) as my OSK. You're free to alter the keyboard in `osk-toggle.sh` to your own selection. To install `wvkbd-deskintl`, you'll have to download the repository and build it yourself. The repo has instructions on how to do this, as well as instructions on how to theme it.
 
 ### Battery Health
-I use [asus-battery-health](https://github.com/sakibulalikhan/asus-battery-health) to limit charging to 80%, following Asus' default settings.
+I use [asus-battery-health](https://github.com/sakibulalikhan/asus-battery-health) to limit charging to 80%, following Asus' default settings. The script only needs to be run once, and it will limit charging from that point onwards.
 
 ### Touchscreen Gestures
 Hyprland supports plugins, and the [hyprgrass](https://github.com/horriblename/hyprgrass) plugin lets you perform gestures to run commands. I use it to bring up the keyboard, move between workspaces, and alter volume, brightness, etc.
@@ -71,15 +71,17 @@ There was an issue with the linux kernel for some time which made it so that rem
 
 ## Features:
 - [X] bottom screen automatic keyboard response
-- [X] persistant screen state memory
 - [X] bottom screen toggle (SUPER + O)
 - [X] brightness sync between screens
 - [X] automatic screen rotation
 - [x] share mode (flip upside down while keyboard removed)
 - [X] hyprland touchscreen mappings
-- [X] alternative function key bindings (bound to function keys, check zenbook.conf for details)
+- [X] function key bindings (bound to function keys, see `zenbook.conf` for details)
 - [X] keyboard backlight (via [bk.py](https://github.com/alesya-h/zenbook-duo-2024-ux8406ma-linux/), F4)
 - [X] on-screen keyboard (via [wvkbd](https://github.com/jjsullivan5196/wvkbd), SUPER + A)
+- [X] battery charge limiting (via [asus-battery-health](https://github.com/sakibulalikhan/asus-battery-health))
+- [ ] screen gestures (via [hyprgrass](https://github.com/horriblename/hyprgrass), see `zenbook.conf`)
+- [ ] function key bindings on bluetooth (volume controls work but nothing else does)
 - [ ] touchpad palm rejection
 - [ ] fan control
 - [ ] an install/uninstall script, and better consolidation
