@@ -82,6 +82,8 @@ There was an issue with the linux kernel for some time which made it so that rem
 - [X] battery charge limiting (via [asus-battery-health](https://github.com/sakibulalikhan/asus-battery-health))
 - [ ] screen gestures (via [hyprgrass](https://github.com/horriblename/hyprgrass), see `zenbook.conf`)
 - [ ] function key bindings on bluetooth (volume controls work but nothing else does)
+- [ ] multi-monitor window fullscreen
+- [ ] on-screen touchpad
 - [ ] touchpad palm rejection
 - [ ] fan control
 - [ ] an install/uninstall script, and better consolidation
