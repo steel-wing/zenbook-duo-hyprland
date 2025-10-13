@@ -22,8 +22,6 @@ source = ~/.config/hypr/zenbook.conf
 ```
 _This is assuming that the files from this repository made it into your Downloads folder as they are listed in this directory._
 
-Also, feel free to copy the contents of `hypridle.conf` into your hypridle file, for more responsive keyboard backlight control.
-
 ### Scripts
 The value for **TARGET_ID** in `zenbook-scripts/screen-response.sh` needs to be modified to the ID of your own keyboard, 
 which can be found by running `lsusb` in the terminal while the keyboard is physically connected and then finding the ID corresponding to `ASUSTek Computer, Inc. ASUS Zenbook Duo Keyboard`. 
@@ -61,7 +59,7 @@ On my machine, currently, the maximum usage of these scripts (in the form of ino
 Among other things, [this repo](https://github.com/alesya-h/zenbook-duo-2024-ux8406ma-linux/) contains a script called bk.py, which sends usb data over to the keyboard and tells it to light up. 
 The script requires `python3` and `pyusb` to be installed. It only works while the keyboard is connected.
 I've taken this script and included it, unmodified, in this repo for easiness' sake.
-`backlight-increment.sh` keeps track of the state of the keyboard, and `zenbook.conf` makes sure to turn it off and on when you close/open the lid.
+Copy the contents of `hypridle.conf` into your hypridle file for more responsive keyboard backlight control.
 
 
 ### On-Screen Keyboard
@@ -78,11 +76,6 @@ The script only needs to be run once, and it will limit charging from that point
 ### Touchscreen Gestures
 Hyprland supports plugins, and the [hyprgrass](https://github.com/horriblename/hyprgrass) plugin lets you perform gestures to run commands. 
 I use it to bring up the keyboard, move between workspaces, and alter volume, brightness, etc.
-
-
-## Warning
-There was an issue with the linux kernel for some time which made it so that removing the keyboard disabled the Wi-Fi adapter. 
-This was patched in 6.11+, but seems to have broken again in 6.16.7.arch1-1.
 
 
 ## Features:
