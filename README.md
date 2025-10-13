@@ -108,6 +108,7 @@ I use it to bring up the keyboard, move between workspaces, and alter volume, br
 - **KDE**: https://github.com/ywzjackal/zenbook-duo-2025-linux
 - **Nix & Misc.**: https://docs.google.com/spreadsheets/d/1FyQ1RQ8zcTqokwqjNKyVzNravB_R-KRfJmR6frjeE3c/edit?pli=1&gid=0#gid=0
 - **Incredible Kernal Work**: https://github.com/NeroReflex/asusctl/issues/25
+- **Keyboard Solution on AUR**: https://github.com/ParticleG/zenbook-duo-keyboard-service/tree/main
 - **Keyboard Kernal Fix(?)**: https://gist.github.com/mfenniak/f313f9a94fbcfa8fb52f978f29393ab1
 - **Fan Control(?)**: https://github.com/dominiksalvet/asus-fan-control/
 - **SOURCE**: https://discourse.nixos.org/t/asus-zenbook-duo-2024-ux8406ma-nixos/39792
