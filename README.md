@@ -12,7 +12,7 @@ sudo pacman -S inotify-tools usbutils iio-sensor-proxy
 
 
 ### Hyprland Config
-After downloading, move `zenbook.conf` into `~/.config/hypr/`, 
+After downloading, move `zenbook.conf` and into `~/.config/hypr/`, 
 ```
 cp ~/Downloads/zenbook.conf ~/.config/hypr
 ```
@@ -21,6 +21,8 @@ and add this line to your `hyprland.conf` file:
 source = ~/.config/hypr/zenbook.conf
 ```
 _This is assuming that the files from this repository made it into your Downloads folder as they are listed in this directory._
+
+Also, feel free to copy the contents of `hypridle.conf` into your hypridle file, for more responsive keyboard backlight control.
 
 ### Scripts
 The value for **TARGET_ID** in `zenbook-scripts/screen-response.sh` needs to be modified to the ID of your own keyboard, 
@@ -36,13 +38,13 @@ sudo chmod -R +x /usr/local/bin/zenbook-scripts
 ```
 
 ### udev Rule
-Edit `99-asus-bottom-screen.rules` in the same way as you did `screen-response.sh`, replacing the first four characters of the ID in `ATTRS{idVendor}=="0b05"` and the second four in `ATTRS{idProduct}=="1b2c"`.
+Edit `99-zenbook-keyboard.rules` in the same way as you did `screen-response.sh`, replacing the first four characters of the ID in `ATTRS{idVendor}=="0b05"` and the second four in `ATTRS{idProduct}=="1b2c"`.
 Be sure to do this for both lines of code (one for removing the keyboard, one for replacing).
 
 
-Place `99-asus-bottom-screen.rules` in `/etc/udev/rules.d` and reload the rules:
+Place `99-zenbook-keyboard.rules` in `/etc/udev/rules.d` and reload the rules:
 ```
-sudo cp ~/Downloads/99-asus-bottom-screen.rules /etc/udev/rules.d
+sudo cp ~/Downloads/99-zenbook-keyboard.rules /etc/udev/rules.d
 sudo udevadm control --reload-rules
 ```
 
@@ -51,7 +53,7 @@ Finally, reboot. That should ensure that hyprland (via zenbook.conf) loads our `
 
 
 ## Performance
-On my machine, currently, the maximum usage of these scripts (in the form of inotifywait and sensor-monitor calls) is around 23MB (with both screens on). It normally sits around 15MB (when the keyboard is attached). 
+On my machine, currently, the maximum usage of these scripts (in the form of inotifywait and sensor-monitor calls) is around 20MB. 
 
 
 ## Other Code
@@ -63,9 +65,9 @@ I've taken this script and included it, unmodified, in this repo for easiness' s
 
 
 ### On-Screen Keyboard
-I use [wvkbd](https://github.com/jjsullivan5196/wvkbd) as my OSK. You're free to alter the keyboard in `osk-toggle.sh` to your own selection. 
-To install `wvkbd-deskintl`, you'll have to download the repository and build it yourself. 
-The repo has instructions on how to do this, as well as instructions on how to theme it.
+I use a slightly modified [wvkbd](https://github.com/jjsullivan5196/wvkbd) as my OSK (see [wvkbd-zenbook](https://github.com/steel-wing/wvkbd-zenbook). You're free to alter the keyboard in `osk-toggle.sh` to your own selection. 
+To install `wvkbd-zenbook`, you'll have to download the repository and build it yourself. 
+The repo has instructions on how to do this, as well as some instructions on how to theme it.
 
 
 ### Battery Health
@@ -90,9 +92,9 @@ This was patched in 6.11+, but seems to have broken again in 6.16.7.arch1-1.
 - [X] automatic screen rotation
 - [x] share mode (flip upside down while keyboard removed)
 - [X] hyprland touchscreen mappings
-- [X] function key bindings (bound to function keys, see `zenbook.conf`)
+- [X] function key bindings (see `zenbook.conf`)
 - [X] keyboard backlight (via [bk.py](https://github.com/alesya-h/zenbook-duo-2024-ux8406ma-linux/), F4)
-- [X] on-screen keyboard (via [wvkbd](https://github.com/jjsullivan5196/wvkbd), SUPER + A)
+- [X] on-screen keyboard (via [wvkbd-zenbook](https://github.com/steel-wing/wvkbd-zenbook), SUPER + A)
 - [X] battery charge limiting (via [asus-battery-health](https://github.com/sakibulalikhan/asus-battery-health))
 - [X] screen gestures (via [hyprgrass](https://github.com/horriblename/hyprgrass), see `zenbook.conf`)
 - [ ] function key bindings on bluetooth (volume controls work but nothing else does)
