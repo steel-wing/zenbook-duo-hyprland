@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# this script toggles the visibility of wvkbd
+# this script toggles the visibility of wvkbd when called, SUPER + A is default
 # credit to a deleted user on reddit from 2023 for this one
 
 # load up our context
@@ -21,14 +21,18 @@ OLD_IFS=$IFS
 IFS=$'\n'
 
 # Get the PIDs of wvkbd
-WVKBD_PIDs=$(pgrep -x "wvkbd-deskintl")
+WVKBD_PIDs=$(pgrep -x "wvkbd-zenbook")
+
+
+# see about using the signals for this instead?
+
 
 # Check if wvkbd is running
 if [ -z "$WVKBD_PIDs" ]; then
     # wvkbd is not running, so start it
     hyprctl dispatch focusmonitor eDP-2
     sleep 0.1
-    wvkbd-deskintl -H 600 -L 600 &
+    wvkbd-zenbook -H 600 -L 600 &
 
 else
     # wvkbd is running, so toggle its visibility for each PID

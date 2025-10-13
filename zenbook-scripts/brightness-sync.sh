@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# this script uses brightnessctl to synchronize the brightnessesof the two displays
+# this script uses brightnessctl to synchronize the brightnesses of the two displays
 
 # paths to brightness files. use brightnessctl 
 intel_brightness_file="/sys/class/backlight/intel_backlight/brightness"
@@ -34,4 +34,7 @@ while read -r path action file; do
     
     # set the same brightness for card1-eDP-2-backlight
     brightnessctl --device="card1-eDP-2-backlight" set "${new_brightness}%"
+
+    # add functionality here to ensure brightness never goes below 1%
+    
 done

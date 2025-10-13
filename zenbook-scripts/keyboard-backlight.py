@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 
-
 # all credit to Alesya at https://github.com/alesya-h/zenbook-duo-2024-ux8406ma-linux/
 
 import sys

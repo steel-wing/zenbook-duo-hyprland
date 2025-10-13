@@ -9,8 +9,6 @@ KEYBOARDFILE="/tmp/zenbook/keyboard-status"
 if hyprctl monitors | grep -q 'eDP-2'; then
     hyprctl keyword monitor "eDP-2, disable"
 else
-    # if keyboard isn't attached, ensure that the screens get updated
-    if [[ "$(cat "$KEYBOARDFILE" 2>/dev/null)" == "0" ]]; then
-        /usr/local/bin/zenbook-scripts/update-screens.sh &
-    fi
+    # refresh screens to get things the way they should
+    /usr/local/bin/zenbook-scripts/update-screens.sh &
 fi

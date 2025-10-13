@@ -6,7 +6,7 @@
 TARGET_ID=0b05:1b2c # lsusb id of zenbook keyboard
 KEYBOARDFILE="/tmp/zenbook/keyboard-status"
 
-# very silly way of getting around hyprland issues after reload
+# very silly way of getting around hyprland glitching issues after reload
 sleep 0.5
 
 ### Load Keyboard Status ###

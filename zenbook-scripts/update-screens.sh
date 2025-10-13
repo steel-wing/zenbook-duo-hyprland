@@ -1,13 +1,12 @@
 #!/bin/bash
 
 # this script is in charge of lighting up, turning off, or rotating screens based on context.
-# it also handles the keyboard backlight function calls
+# it also maintains the keyboard backlight
 
 ## Load in Contextual Data
 KEYBOARDFILE="/tmp/zenbook/keyboard-status"
 ORIENTFILE="/tmp/zenbook/orientation-status"
 LIDFILE="/proc/acpi/button/lid/LID/state"
-BACKLIGHTFILE="/tmp/zenbook/backlight-status"
 
 ORIENT="0"
 LID_STATE=""
@@ -15,17 +14,6 @@ LID_STATE=""
 # read in file contents
 read -r STATUS < "$KEYBOARDFILE"
 read -r ORIENTATION < "$ORIENTFILE"
-
-# build the backlight status file if it doesn't exist yet
-mkdir -p "$(dirname "$BACKLIGHTFILE")"
-touch "$BACKLIGHTFILE"
-
-# read in the keyboard backlight status
-read -r KB < "$BACKLIGHTFILE"
-if [ -z "$KB" ]; then
-  KB=0
-  echo "$KB" > "$BACKLIGHTFILE"
-fi
 
 # read in the lid status
 if [ -f "$LIDFILE" ]; then
@@ -90,4 +78,4 @@ esac
 hyprctl keyword input:touchdevice:transform "$ORIENT"
 
 # reload the current backlight level
-/usr/local/bin/zenbook-scripts/keyboard-backlight.py "$KB" &
+/usr/local/bin/zenbook-scripts/backlight-handler.sh

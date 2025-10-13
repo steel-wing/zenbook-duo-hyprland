@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# this script is called by /etc/udev/rules.d/99-asus-bottom-screen.rules
+# this script is called by /etc/udev/rules.d/99-zenbook-keyboard.rules
 # it passes the changing keyboard's state to the /tmp/zenbook/keyboard-status file
 
 KEYBOARDFILE="/tmp/zenbook/keyboard-status"
