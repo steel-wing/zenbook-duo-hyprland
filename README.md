@@ -108,6 +108,8 @@ I use it to bring up the keyboard, move between workspaces, and alter volume, br
     - This is a consolidated, more easily installable version of Alesya's GNOME approach
 - **GNOME & Hyprland**: https://github.com/evilsquid888/zenbook-duo-2024-ux8406ca-linux
     - This one has worked on adapting Alesya's approach to Hyprland, and may work just as well as (if not better than) mine.
+- **Hyprland**: https://www.saminamanat.com/articles/zenbook-duo-wifi-fix
+    - A remarkably thorough set of scripts and edits to make sure this works on Hyprland, which also addresses the wifi issue if you still have it.
 - **Arch**: https://github.com/ParticleG/
     - This is a lower-level set of support scripts for Arch
 - **KDE**: https://github.com/ywzjackal/zenbook-duo-2025-linuxzenbook-duo-keyboard-service/tree/main
