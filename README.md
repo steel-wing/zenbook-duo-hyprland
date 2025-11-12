@@ -59,8 +59,15 @@ These scripts should take up about 10 MB while the keyboard is on, and around 30
 Among other things, [this repo](https://github.com/alesya-h/zenbook-duo-2024-ux8406ma-linux/) contains a script called bk.py, which sends usb data over to the keyboard and tells it to light up. 
 The script requires `python3` and `pyusb` to be installed. It only works while the keyboard is connected.
 I've taken this script and included it, unmodified, in this repo for easiness' sake.
-Copy the contents of `hypridle.conf` into your hypridle file for more responsive keyboard backlight control.
-
+Hypridle can manage turning the keyboard on and off dynamically like so:
+```
+# keyboard dim after 15 seconds
+listener {
+    timeout = 15
+    on-timeout = /usr/local/bin/zenbook-scripts/keyboard-backlight.py 0
+    on-resume = /usr/local/bin/zenbook-scripts/backlight-handler.sh
+}
+```
 
 ### On-Screen Keyboard
 I use a slightly modified [wvkbd](https://github.com/jjsullivan5196/wvkbd) as my OSK (see [wvkbd-zenbook](https://github.com/steel-wing/wvkbd-zenbook)). You're free to alter the keyboard in `osk-toggle.sh` to your own selection. 
@@ -117,8 +124,5 @@ I use it to bring up the keyboard, move between workspaces, and alter volume, br
 - **asusctl**: https://github.com/NeroReflex/asusctl/
     - lots of general support for asus laptops, support for this one is ongoing
 - **Incredible Kernal Work**: https://github.com/NeroReflex/asusctl/issues/25
-- **Keyboard Kernal Fix(?)**: https://gist.github.com/mfenniak/f313f9a94fbcfa8fb52f978f29393ab1
-- **Fan Control(?)**: https://github.com/dominiksalvet/asus-fan-control/
 - **SOURCE**: https://discourse.nixos.org/t/asus-zenbook-duo-2024-ux8406ma-nixos/39792
     - this discussion has a lot of great conversations and clues about the hardware that might be useful.
-  
