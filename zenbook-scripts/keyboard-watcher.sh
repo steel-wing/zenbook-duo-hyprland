@@ -29,6 +29,12 @@ inotifywait -m -e modify "$KEYBOARDFILE" | while read -r _; do
     if [[ "$(cat "$KEYBOARDFILE" 2>/dev/null)" == "0" ]]; then
         /usr/local/bin/zenbook-scripts/orientation-watcher.sh &
         /usr/local/bin/zenbook-scripts/brightness-sync.sh &
+    else
+        # clean unecessary tasks from memory
+        pkill -f wvkbd-zenbook
+        pkill -f /usr/local/bin/zenbook-scripts/brightness-sync
+        pkill -f /usr/local/bin/zenbook-scripts/orientation-watcher
+    
     fi
 
     /usr/local/bin/zenbook-scripts/update-screens.sh &

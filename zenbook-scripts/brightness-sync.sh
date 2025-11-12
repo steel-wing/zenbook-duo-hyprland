@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # this script uses brightnessctl to synchronize the brightnesses of the two displays
-# only the top screen is directly shown to the OS (11-2025), so this matches bottom to top (and not vice versa)
+# only the top screen is directly shown to the OS, so this makes sure the bottom screen responds
 
 KEYBOARDFILE="/tmp/zenbook/keyboard-status"
 intel_brightness_file="/sys/class/backlight/intel_backlight/brightness"

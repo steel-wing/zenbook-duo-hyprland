@@ -37,11 +37,6 @@ case "$STATUS" in
 1)
         hyprctl keyword monitor "eDP-1, preferred, 0x0, 1, transform, 0"
         hyprctl keyword monitor "eDP-2, disable"
-
-        # clean unecessary tasks from memory
-        pkill -f wvkbd-zenbook
-        pkill -f /usr/local/bin/zenbook-scripts/brightness-sync
-        pkill -f /usr/local/bin/zenbook-scripts/orientation-watcher
         ORIENT="0"
         ;;
 0)
