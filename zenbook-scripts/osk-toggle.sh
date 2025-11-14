@@ -18,11 +18,9 @@ WVKBD_PIDs=$(pgrep -x "wvkbd-zenbook")
 
 if [ -z "$WVKBD_PIDs" ]; then
     hyprctl dispatch focusmonitor eDP-2
-    sleep 0.1
     wvkbd-zenbook -H 400 -L 580 &
 
 else
-    sleep 0.1
     for pid in $WVKBD_PIDs; do
         # -34 = SIGRMIN, so, toggle visibility
         kill -34 $pid
