@@ -93,7 +93,6 @@ I use it to bring up the keyboard, move between workspaces, and alter volume, br
 - [x] share mode (flip upside down while keyboard removed)
 - [X] hyprland touchscreen mappings
 - [X] function key bindings (see `zenbook.conf`)
-- [X] bluetooth wake from sleep
 - [ ] function key bindings on bluetooth (volume controls work but nothing else does)
 - [ ] multi-monitor window fullscreen
 - [ ] on-screen touchpad
