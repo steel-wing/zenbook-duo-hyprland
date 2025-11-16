@@ -40,31 +40,31 @@ fi
 ## Keyboard & Orientation Handling
 case "$STATUS" in
 1)
-        hyprctl keyword monitor "eDP-1, preferred, auto, 1, transform, 0"
+        hyprctl keyword monitor "eDP-1, preferred, auto-center, 1, transform, 0"
         hyprctl keyword monitor "eDP-2, disable"
         ORIENT="0"
         ;;
 0)
         case "$ORIENTATION" in
         0)  
-                hyprctl keyword monitor "eDP-1, preferred, auto, 1, transform, 0"
+                hyprctl keyword monitor "eDP-1, preferred, auto-center, 1, transform, 0"
                 hyprctl keyword monitor "eDP-2, preferred, auto-down, 1, transform, 0"
                 ORIENT="0"
                 ;;
         1)
-                hyprctl keyword monitor "eDP-1, preferred, auto, 1, transform, 1"
-                hyprctl keyword monitor "eDP-2, preferred, auto-left, 1, transform, 1"
+                hyprctl keyword monitor "eDP-1, preferred, auto-center-left, 1, transform, 1"
+                hyprctl keyword monitor "eDP-2, preferred, auto-center, 1, transform, 1"
                 ORIENT="1"
                 ;;
         2)
                 # flip laptop over momentarily to activate ASUS's little "screen mirror mode"
-                hyprctl keyword monitor "eDP-1, preferred, auto, 1, transform, 2"
-                hyprctl keyword monitor "eDP-2, preferred, auto, 1, transform, 0, mirror, eDP-1"
+                hyprctl keyword monitor "eDP-1, preferred, auto-center, 1, transform, 2"
+                hyprctl keyword monitor "eDP-2, preferred, auto-center, 1, transform, 0, mirror, eDP-1"
                 ORIENT="0"
                 ;;
         3)
-                hyprctl keyword monitor "eDP-1, preferred, auto, 1, transform, 3"
-                hyprctl keyword monitor "eDP-2, preferred, auto-right, 1, transform, 3"
+                hyprctl keyword monitor "eDP-1, preferred, auto-center, 1, transform, 3"
+                hyprctl keyword monitor "eDP-2, preferred, auto-center-right, 1, transform, 3"
                 ORIENT="3"
                 ;;
         esac
