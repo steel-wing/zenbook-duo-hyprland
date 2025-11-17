@@ -1,5 +1,5 @@
 # Zenbook Duo - Hyprland
-These are the scripts I use on my Arch + Hyprland Asus Zenbook Duo (2024). 
+These are the scripts I use on my Asus Zenbook Duo (2024) running Arch + Hyprland. 
 While they started out as an attempt at getting the bottom screen to work, the scope is now aimed at feature parity with the drivers and software that ASUS bundles with this device on Windows.
 
 
@@ -90,11 +90,11 @@ I use it to bring up the keyboard, move between workspaces, and alter volume, br
 - [X] bottom screen toggle (SUPER + O)
 - [X] brightness sync between screens
 - [X] automatic screen rotation
-- [x] share mode (flip upside down while keyboard removed)
+- [X] share mode (flip upside down while keyboard removed)
 - [X] hyprland touchscreen mappings
+- [X] multi-monitor window fullscreen (SUPER + F7)
 - [X] function key bindings (see `zenbook.conf`)
 - [ ] function key bindings on bluetooth (volume controls work but nothing else does)
-- [ ] multi-monitor window fullscreen
 - [ ] on-screen touchpad
 - [ ] touchpad palm rejection
 - [ ] fan control
